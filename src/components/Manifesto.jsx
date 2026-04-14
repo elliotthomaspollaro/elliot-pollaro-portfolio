@@ -6,6 +6,7 @@ const textItems = [
   "I ship software, run ads, and build with AI.",
   "Full-stack engineer. Performance marketer. AI-native creative.",
   "18 years — from $15M ad accounts to production React codebases to generative video pipelines.",
+  "Most people specialize. I operate across every layer of the stack — and I'm dangerous at all of them.",
   "I don't pitch decks about AI. I deploy it."
 ];
 
