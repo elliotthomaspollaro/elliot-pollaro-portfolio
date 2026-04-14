@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+public/media/GrokSpotFinal.mov
+public/media/sleep-web.mp4
