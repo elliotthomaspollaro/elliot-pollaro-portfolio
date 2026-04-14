@@ -16,34 +16,27 @@ const Contact = () => {
           <div className="profile-wrapper">
             <img src="/media/profileimage.jpg" alt="Elliot Pollaro" className="profile-avatar" />
           </div>
-          <h2 className="title glow-text">SYSTEM READY FOR DEPLOYMENT</h2>
+          <h2 className="title glow-text">READY FOR DEPLOYMENT</h2>
           <p className="subtitle">
-            Currently available for cross-domain engineering, AI strategy, and performance media operations.
+            Looking to integrate top-tier AI capabilities and operational automation? Let's connect.
           </p>
           
           <div className="contact-links">
+            <a href="/media/Elliot_Pollaro_Resume_2026.pdf" download className="contact-button mono glass-panel">
+              <FileText size={20} className="icon" /> Download Resume
+            </a>
             <a href="mailto:elliotthomaspollaro@gmail.com" className="contact-button mono glass-panel">
-              <Mail size={18} className="icon" /> EMAIL_DIRECT
+              <Mail size={20} className="icon" /> Email Me
             </a>
-            <a href="https://github.com/elliotthomaspollaro" target="_blank" rel="noreferrer" className="contact-button mono glass-panel">
-              <Link size={18} className="icon" /> GITHUB_SOURCE
-            </a>
-            <a href="https://linkedin.com/in/elliotpollaro" target="_blank" rel="noreferrer" className="contact-button mono glass-panel">
-              <Link size={18} className="icon" /> LINKEDIN_CORE
-            </a>
-            <a href="/media/Elliot_Pollaro_Resume_2026.pdf" download className="contact-button mono glass-panel resume-btn">
-              <FileText size={18} className="icon" /> RESUME_PDF
+            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="contact-button mono glass-panel">
+              <Link size={20} className="icon" /> LinkedIn
             </a>
           </div>
         </motion.div>
       </div>
       
       <footer className="footer mono">
-        <div className="footer-status">
-          <span className="status-dot"></span>
-          <span>SYSTEM_STATUS: ACTIVE</span>
-        </div>
-        <p>&copy; {new Date().getFullYear()} ELLIOT POLLARO // SHIPPED FROM DALLAS, TX</p>
+        <p>&copy; {new Date().getFullYear()} ELLIOT POLLARO // Built with First Principles</p>
       </footer>
     </section>
   );
