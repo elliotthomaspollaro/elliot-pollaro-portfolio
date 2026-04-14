@@ -1,0 +1,131 @@
+.short-film-section {
+  padding: var(--spacing-xxl) 0;
+  background-color: #000;
+  border-bottom: 1px solid rgba(255,176,0,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.short-film-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle at center, rgba(255, 176, 0, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.film-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.film-header .mono {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: 0.3em;
+  color: var(--accent-amber);
+}
+
+.massive-film-title {
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-family: var(--font-massive);
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 0.9;
+  text-shadow: 0 10px 40px rgba(255,176,0,0.2);
+}
+
+.film-credit {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  margin-top: var(--spacing-md);
+}
+
+.laurels-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xxl);
+}
+
+@media (min-width: 768px) {
+  .laurels-bar {
+    flex-direction: row;
+    gap: var(--spacing-xxl);
+  }
+}
+
+.laurel-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.laurel-svg {
+  color: var(--accent-amber);
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 0 10px rgba(255,176,0,0.5));
+}
+
+.laurel-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.laurel-role {
+  font-family: var(--font-massive);
+  font-size: 1.2rem;
+  color: var(--text-main);
+  letter-spacing: 0.1em;
+}
+
+.laurel-festival {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.2em;
+}
+
+.film-player-container {
+  width: 100%;
+  aspect-ratio: 2.35 / 1; /* Pure anamorphic cinematic ratio */
+  background: #000;
+  border-radius: 4px;
+  position: relative;
+  box-shadow: 0 20px 100px rgba(0,0,0,1);
+  overflow: hidden;
+  border: 1px solid rgba(255,176,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .film-player-container {
+    aspect-ratio: 16 / 9; /* Fallback for mobile so it isn't a tiny slit */
+  }
+}
+
+.film-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.film-player-container .status-overlay {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 10;
+  color: var(--accent-amber);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+}

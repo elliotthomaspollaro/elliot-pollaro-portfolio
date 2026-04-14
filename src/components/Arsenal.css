@@ -1,0 +1,237 @@
+.arsenal-section {
+  padding: var(--spacing-xxl) 0;
+  background-color: var(--bg-color);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.arsenal-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+}
+
+.arsenal-header .mono {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: 0.2em;
+}
+
+.arsenal-header h2 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: var(--text-main);
+  line-height: 1;
+}
+
+/* ── Block Title ── */
+.arsenal-block {
+  max-width: 1200px;
+  margin: 0 auto var(--spacing-xxl);
+}
+
+.block-title {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-massive);
+  font-size: 1.2rem;
+  color: white;
+  letter-spacing: 0.02em;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.block-icon {
+  color: var(--accent-amber);
+}
+
+/* ════════════════════════════════════════════
+   AI TOOLS GRID
+   ════════════════════════════════════════════ */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+@media (min-width: 600px) {
+  .tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .tools-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.tool-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.tool-card:hover {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255, 176, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.tool-icon-wrap {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: rgba(255, 176, 0, 0.08);
+  border: 1px solid rgba(255, 176, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-amber);
+}
+
+.tool-info {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.tool-name {
+  font-family: var(--font-massive);
+  font-size: 1rem;
+  color: white;
+}
+
+.tool-category {
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.tool-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* ════════════════════════════════════════════
+   MARKETING STATS ROW
+   ════════════════════════════════════════════ */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin-bottom: var(--spacing-xl);
+}
+
+@media (min-width: 768px) {
+  .stats-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.stat-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 1.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  border-color: rgba(0, 240, 255, 0.2);
+  background: rgba(0, 240, 255, 0.03);
+}
+
+.stat-icon {
+  color: var(--accent-cyan);
+}
+
+.stat-value {
+  font-family: var(--font-massive);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: white;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  line-height: 1.3;
+}
+
+/* ════════════════════════════════════════════
+   CHANNELS GRID
+   ════════════════════════════════════════════ */
+.channels-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  margin-bottom: var(--spacing-lg);
+}
+
+@media (min-width: 768px) {
+  .channels-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.channel-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.channel-card:hover {
+  border-color: rgba(255, 176, 0, 0.15);
+  background: rgba(255,255,255,0.03);
+}
+
+.channel-name {
+  font-family: var(--font-massive);
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.channel-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ── Apple ATT Callout ── */
+.arsenal-callout {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1.2rem 1.5rem;
+  border-radius: 8px;
+  background: rgba(255, 176, 0, 0.04);
+  border: 1px solid rgba(255, 176, 0, 0.12);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.arsenal-callout svg {
+  color: var(--accent-amber);
+  flex-shrink: 0;
+  margin-top: 2px;
+}

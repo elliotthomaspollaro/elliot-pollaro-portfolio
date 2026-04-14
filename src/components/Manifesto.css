@@ -1,0 +1,34 @@
+.manifesto-section {
+  position: relative;
+  height: 120vh;
+  background-color: var(--bg-color);
+}
+
+.sticky-container {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl);
+}
+
+.manifesto-content {
+  max-width: 1200px;
+  text-align: center;
+}
+
+.manifesto-focus-text p {
+  font-family: var(--font-massive);
+  font-size: clamp(1.5rem, 4vw, 3.5rem);
+  color: var(--text-main);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-xl);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.manifesto-focus-text p:last-child {
+  color: var(--accent-amber);
+}
