@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import MDiv from './MDiv';
 import { Play, Pause, Disc3, Radio } from 'lucide-react';
 import './GenerativeAudio.css';
 
@@ -146,7 +146,7 @@ const GenerativeAudio = () => {
     <section className="audio-section" id="audio">
       <div className="container">
         
-        <motion.div 
+        <MDiv 
           className="deployments-header"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -154,9 +154,9 @@ const GenerativeAudio = () => {
         >
           <span className="mono accent-amber">// GENERATIVE SOUNDSCAPES</span>
           <h2 className="section-title">AI GENERATED MUSIC</h2>
-        </motion.div>
+        </MDiv>
 
-        <motion.div 
+        <MDiv 
           className="oscilloscope-container"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -205,7 +205,7 @@ const GenerativeAudio = () => {
           </div>
 
           <audio ref={audioRef} onEnded={() => setIsPlaying(false)} crossOrigin="anonymous" />
-        </motion.div>
+        </MDiv>
       </div>
     </section>
   );

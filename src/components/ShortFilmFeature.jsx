@@ -25,7 +25,7 @@ const ShortFilmFeature = () => {
   return (
     <section className="short-film-section" id="film">
       <div className="container">
-        <motion.div 
+        <MDiv 
           className="film-header"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,11 +34,11 @@ const ShortFilmFeature = () => {
           <span className="mono accent-amber">// AWARD-WINNING CINEMATOGRAPHY</span>
           <h2 className="massive-film-title">SLEEP NOW IN THE FIRE</h2>
           <p className="film-credit mono text-muted">Writer & Cinematographer — Elliot Pollaro</p>
-        </motion.div>
+        </MDiv>
 
         <div className="laurels-bar">
           {awards.map((award, index) => (
-            <motion.div 
+            <MDiv 
               key={index} 
               className="laurel-item"
               initial={{ opacity: 0, scale: 0.9 }}
@@ -58,11 +58,11 @@ const ShortFilmFeature = () => {
                 <span className="laurel-role">{award.role}</span>
                 <span className="laurel-festival">{award.festival}</span>
               </div>
-            </motion.div>
+            </MDiv>
           ))}
         </div>
 
-        <motion.div 
+        <MDiv 
           className="film-player-container glass-panel"
           style={{ y: yParallax }}
         >
@@ -77,7 +77,7 @@ const ShortFilmFeature = () => {
             className="film-video"
             poster="/media/sleep-poster.jpg"
           ></video>
-        </motion.div>
+        </MDiv>
       </div>
     </section>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import MDiv from './MDiv';
 import { Zap, Download, MapPin, Clock } from 'lucide-react';
 import './Timeline.css';
 
@@ -56,7 +56,7 @@ const Timeline = () => {
   return (
     <section className="timeline-section" id="experience">
       <div className="container">
-        <motion.div 
+        <MDiv 
           className="timeline-top"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -74,11 +74,11 @@ const Timeline = () => {
             <Download size={16} />
             DOWNLOAD RESUME
           </a>
-        </motion.div>
+        </MDiv>
 
         <div className="timeline">
           {experiences.map((exp, index) => (
-            <motion.div 
+            <MDiv 
               key={index} 
               className="timeline-item"
               initial={{ opacity: 0, x: -30 }}
@@ -105,12 +105,12 @@ const Timeline = () => {
                   ))}
                 </ul>
               </div>
-            </motion.div>
+            </MDiv>
           ))}
         </div>
 
         {/* Technical Skills Summary */}
-        <motion.div
+        <MDiv
           className="skills-block"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -125,7 +125,7 @@ const Timeline = () => {
               </div>
             ))}
           </div>
-        </motion.div>
+        </MDiv>
 
       </div>
     </section>

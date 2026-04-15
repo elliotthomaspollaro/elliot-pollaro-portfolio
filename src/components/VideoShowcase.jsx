@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
+import MDiv from './MDiv';
 import { Play } from 'lucide-react';
 import './VideoShowcase.css';
 
@@ -26,7 +26,7 @@ const VideoShowcase = () => {
   return (
     <section className="video-section cinematic-dark" id="showcase">
       <div className="container">
-        <motion.div 
+        <MDiv 
           className="deployments-header"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ const VideoShowcase = () => {
         >
           <span className="mono accent-amber">// MOTION GRAPHICS & GENERATIVE</span>
           <h2 className="section-title" style={{color: 'var(--text-main)'}}>VIDEO EXPERIENCES</h2>
-        </motion.div>
+        </MDiv>
 
         <div className="video-layout">
           <div className="main-player-block glass-panel">

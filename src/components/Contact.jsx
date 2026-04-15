@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import MDiv from './MDiv';
 import { FileText, Mail, Link } from 'lucide-react';
 import './Contact.css';
 
@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <section className="contact-section" id="contact">
       <div className="container">
-        <motion.div 
+        <MDiv 
           className="contact-card glass-panel"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ const Contact = () => {
               <Link size={20} className="icon" /> LinkedIn
             </a>
           </div>
-        </motion.div>
+        </MDiv>
       </div>
       
       <footer className="footer mono">

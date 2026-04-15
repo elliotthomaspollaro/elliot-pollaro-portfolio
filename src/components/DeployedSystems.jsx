@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import MDiv from './MDiv';
+import { AnimatePresence } from 'framer-motion';
 import { ExternalLink, Smartphone, Globe, ChevronRight, ChevronLeft, Layers, Zap, Database, Code2 } from 'lucide-react';
 import './DeployedSystems.css';
 
@@ -59,7 +60,7 @@ const DeployedSystems = () => {
     <section className="deployments-section" id="deployments">
       <div className="container">
         
-        <motion.div 
+        <MDiv 
           className="deployments-header"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -67,10 +68,10 @@ const DeployedSystems = () => {
         >
           <span className="mono accent-amber">// PRODUCTION SYSTEMS</span>
           <h2 className="section-title">ACTIVE DEPLOYMENTS</h2>
-        </motion.div>
+        </MDiv>
 
         {/* ── MOBILE APP HERO CARD ── */}
-        <motion.div 
+        <MDiv 
           className="app-hero-card"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -99,10 +100,10 @@ const DeployedSystems = () => {
               <img src="/media/iphonemockup.png" alt="Dynasty Dealer Mobile App" className="floating-device" />
             </div>
           </div>
-        </motion.div>
+        </MDiv>
 
         {/* ── WEB SYSTEMS INTERACTIVE PANEL ── */}
-        <motion.div 
+        <MDiv 
           className="web-systems-panel"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -125,7 +126,7 @@ const DeployedSystems = () => {
           
           <div className="panel-main">
             <AnimatePresence mode="wait">
-              <motion.div
+              <MDiv
                 key={activeIdx}
                 className="panel-detail"
                 initial={{ opacity: 0, x: 20 }}
@@ -177,7 +178,7 @@ const DeployedSystems = () => {
                     <span className="mono status-text">LIVE</span>
                   </div>
                 </div>
-              </motion.div>
+              </MDiv>
             </AnimatePresence>
 
             {/* Mobile site navigator */}
@@ -199,7 +200,7 @@ const DeployedSystems = () => {
               </button>
             </div>
           </div>
-        </motion.div>
+        </MDiv>
 
       </div>
     </section>

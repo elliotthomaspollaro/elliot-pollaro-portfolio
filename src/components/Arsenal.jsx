@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import MDiv from './MDiv';
 import { 
   Megaphone, Target, TrendingUp, Brain, Cpu, Mic, 
   Image, Video, Code2, Workflow, BarChart3, Zap,
@@ -41,7 +41,7 @@ const Arsenal = () => {
     <section className="arsenal-section" id="arsenal">
       <div className="container">
 
-        <motion.div
+        <MDiv
           className="arsenal-header"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -49,10 +49,10 @@ const Arsenal = () => {
         >
           <span className="mono accent-amber">// CAPABILITIES & INTELLIGENCE STACK</span>
           <h2 className="section-title">THE ARSENAL</h2>
-        </motion.div>
+        </MDiv>
 
         {/* ── AI TOOLS GRID ── */}
-        <motion.div
+        <MDiv
           className="arsenal-block"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ const Arsenal = () => {
           </h3>
           <div className="tools-grid">
             {aiTools.map((tool, i) => (
-              <motion.div
+              <MDiv
                 key={i}
                 className="tool-card"
                 initial={{ opacity: 0, y: 20 }}
@@ -80,13 +80,13 @@ const Arsenal = () => {
                   <span className="tool-category mono">{tool.category}</span>
                 </div>
                 <span className="tool-desc">{tool.desc}</span>
-              </motion.div>
+              </MDiv>
             ))}
           </div>
-        </motion.div>
+        </MDiv>
 
         {/* ── MARKETING METRICS ── */}
-        <motion.div
+        <MDiv
           className="arsenal-block"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -99,7 +99,7 @@ const Arsenal = () => {
 
           <div className="stats-row">
             {marketingStats.map((stat, i) => (
-              <motion.div
+              <MDiv
                 key={i}
                 className="stat-card"
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -110,13 +110,13 @@ const Arsenal = () => {
                 <stat.icon size={18} className="stat-icon" />
                 <span className="stat-value">{stat.value}</span>
                 <span className="stat-label mono">{stat.label}</span>
-              </motion.div>
+              </MDiv>
             ))}
           </div>
 
           <div className="channels-grid">
             {channels.map((ch, i) => (
-              <motion.div
+              <MDiv
                 key={i}
                 className="channel-card"
                 initial={{ opacity: 0, x: -20 }}
@@ -126,7 +126,7 @@ const Arsenal = () => {
               >
                 <h4 className="channel-name">{ch.name}</h4>
                 <p className="channel-desc">{ch.desc}</p>
-              </motion.div>
+              </MDiv>
             ))}
           </div>
 
@@ -137,7 +137,7 @@ const Arsenal = () => {
               preserving campaign performance while competitors lost visibility.
             </span>
           </div>
-        </motion.div>
+        </MDiv>
 
       </div>
     </section>

@@ -12,18 +12,18 @@ const Hero = () => {
     <section className="hero-section cinematic-dark" id="hero">
       <div className="hero-grid-overlay"></div>
       
-      <motion.div 
+      <MDiv 
         className="hero-content"
         style={{ y, opacity }}
       >
-        <motion.div 
+        <MDiv 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
           className="brand-lockup mono"
         >
           <span className="accent-amber">SYS.INIT //</span> ELLIOT POLLARO
-        </motion.div>
+        </MDiv>
 
         <motion.h1 
           initial={{ opacity: 0, y: 50 }}
@@ -43,7 +43,7 @@ const Hero = () => {
           Intelligence integration. Scalable systems. First-principles engineering.
         </motion.p>
 
-        <motion.div
+        <MDiv
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 1.6 }}
@@ -58,10 +58,10 @@ const Hero = () => {
           <span className="hero-contact-item">
             <MapPin size={14} /> Dallas, TX
           </span>
-        </motion.div>
-      </motion.div>
+        </MDiv>
+      </MDiv>
 
-      <motion.div 
+      <MDiv 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 2, delay: 2.5 }}
@@ -69,7 +69,7 @@ const Hero = () => {
       >
         <span>SCROLL TO DESCEND</span>
         <div className="scroll-line"></div>
-      </motion.div>
+      </MDiv>
     </section>
   );
 };

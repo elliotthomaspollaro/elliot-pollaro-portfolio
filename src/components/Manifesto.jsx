@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import MDiv from './MDiv';
 import './Manifesto.css';
 
 const textItems = [
@@ -17,15 +17,15 @@ const Manifesto = () => {
         <div className="manifesto-content">
           <div className="manifesto-focus-text">
             {textItems.map((text, i) => (
-              <motion.p 
+              <MDiv 
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
               >
-                {text}
-              </motion.p>
+                <p>{text}</p>
+              </MDiv>
             ))}
           </div>
         </div>

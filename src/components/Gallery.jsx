@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import MDiv from './MDiv';
+import { AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
 import imagesData from '../data/images.json';
 import './Gallery.css';
@@ -49,7 +50,7 @@ const Lightbox = ({ item, onClose }) => {
   }, [onClose]);
 
   return (
-    <motion.div
+    <MDiv
       className="lightbox-overlay"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -69,7 +70,7 @@ const Lightbox = ({ item, onClose }) => {
       <button className="lightbox-close" onClick={onClose}>
         <X size={24} />
       </button>
-    </motion.div>
+    </MDiv>
   );
 };
 
@@ -102,7 +103,7 @@ const MassiveGallery = () => {
   return (
     <section className="massive-gallery-section" id="gallery">
       <div className="container">
-        <motion.div
+        <MDiv
           className="gallery-header"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -113,7 +114,7 @@ const MassiveGallery = () => {
           <p className="gallery-subtitle text-muted">
             Prompt-engineered across Midjourney V5–V6. Click any generation for full resolution.
           </p>
-        </motion.div>
+        </MDiv>
 
         <div className="cinema-grid">
           {images.map((img, index) => (
