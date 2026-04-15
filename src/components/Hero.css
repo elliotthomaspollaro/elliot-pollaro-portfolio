@@ -39,7 +39,8 @@
   color: var(--accent-amber);
 }
 
-.hero-title {
+.hero-title,
+.hero-title h1 {
   font-size: clamp(4rem, 10vw, 10rem);
   line-height: 0.9;
   letter-spacing: -0.05em;
@@ -47,7 +48,8 @@
   margin-bottom: var(--spacing-lg);
 }
 
-.hero-subtitle {
+.hero-subtitle,
+.hero-subtitle p {
   font-size: clamp(1rem, 1.5vw, 1.5rem);
   max-width: 600px;
   margin: 0 auto;
@@ -102,27 +104,50 @@ a.hero-contact-item:hover {
 @media (max-width: 768px) {
   .hero-section {
     padding: 0 var(--spacing-md);
+    height: 100svh; /* use small viewport height for mobile */
+    overflow: hidden;
   }
 
-  .hero-title {
-    font-size: clamp(2.5rem, 12vw, 5rem);
+  .hero-content {
+    max-width: 100%;
+    overflow: hidden;
   }
 
-  .hero-subtitle {
-    font-size: 0.9rem;
+  .hero-title,
+  .hero-title h1 {
+    font-size: clamp(2.2rem, 11vw, 4rem);
+    margin-bottom: var(--spacing-md);
+    word-break: break-word;
+  }
+
+  .brand-lockup {
+    font-size: 0.7rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .hero-subtitle,
+  .hero-subtitle p {
+    font-size: 0.85rem;
     padding: 0 var(--spacing-sm);
+    line-height: 1.5;
   }
 
   .hero-contact-strip {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.4rem;
+    margin-top: var(--spacing-md);
   }
 
   .hero-contact-item {
-    font-size: 0.65rem;
+    font-size: 0.62rem;
   }
 
   .scroll-indicator {
-    bottom: var(--spacing-lg);
+    bottom: var(--spacing-md);
+    font-size: 0.6rem;
+  }
+
+  .scroll-line {
+    height: 35px;
   }
 }
