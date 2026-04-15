@@ -3,20 +3,34 @@ import { motion } from 'framer-motion';
 
 const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
 
-// On mobile: render a plain div (no animations, no blink)
+// On mobile: render motion.div but override initial to prevent opacity:0 blink
 // On desktop: render motion.div with full animations
-const MDiv = forwardRef((props, ref) => {
+const MDiv = forwardRef(({ initial, whileInView, viewport, transition, animate, style, ...rest }, ref) => {
   if (isMobile) {
-    // Strip all motion-specific props, pass only standard HTML/React props
-    const {
-      initial, animate, exit, whileInView, whileHover, whileTap,
-      viewport, transition, variants, layout, layoutId,
-      onAnimationStart, onAnimationComplete,
-      ...htmlProps
-    } = props;
-    return <div ref={ref} {...htmlProps} />;
+    // On mobile, skip scroll-triggered animations entirely
+    // BUT preserve style (for MotionValues like parallax) and animate (for entrance)
+    return (
+      <motion.div 
+        ref={ref} 
+        style={style}
+        animate={animate}
+        transition={transition ? { ...transition, delay: 0, duration: 0.01 } : undefined}
+        {...rest} 
+      />
+    );
   }
-  return <motion.div ref={ref} {...props} />;
+  return (
+    <motion.div 
+      ref={ref} 
+      initial={initial} 
+      whileInView={whileInView} 
+      viewport={viewport} 
+      transition={transition}
+      animate={animate}
+      style={style}
+      {...rest} 
+    />
+  );
 });
 
 MDiv.displayName = 'MDiv';

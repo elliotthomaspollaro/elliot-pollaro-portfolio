@@ -1,5 +1,6 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useScroll, useTransform } from 'framer-motion';
+import MDiv from './MDiv';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import './Hero.css';
 
@@ -25,23 +26,23 @@ const Hero = () => {
           <span className="accent-amber">SYS.INIT //</span> ELLIOT POLLARO
         </MDiv>
 
-        <motion.h1 
+        <MDiv 
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.5, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="hero-title"
         >
-          ARCHITECT<br/>OF THE<br/>FUTURE.
-        </motion.h1>
+          <h1>ARCHITECT<br/>OF THE<br/>FUTURE.</h1>
+        </MDiv>
 
-        <motion.p 
+        <MDiv 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 2, delay: 1.2 }}
           className="hero-subtitle text-muted"
         >
-          Intelligence integration. Scalable systems. First-principles engineering.
-        </motion.p>
+          <p>Intelligence integration. Scalable systems. First-principles engineering.</p>
+        </MDiv>
 
         <MDiv
           initial={{ opacity: 0 }}

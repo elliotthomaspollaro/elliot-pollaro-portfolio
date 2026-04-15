@@ -1,5 +1,6 @@
 import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useScroll, useTransform } from 'framer-motion';
+import MDiv from './MDiv';
 import { Award, Film } from 'lucide-react';
 import './ShortFilmFeature.css';
 
