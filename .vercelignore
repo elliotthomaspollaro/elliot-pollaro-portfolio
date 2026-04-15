@@ -1,0 +1,3 @@
+# Large media files (exceed platform limits)
+public/media/*.mov
+public/media/sleep-web.mp4

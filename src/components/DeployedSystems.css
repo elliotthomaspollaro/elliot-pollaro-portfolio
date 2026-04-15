@@ -464,6 +464,11 @@
 @media (max-width: 768px) {
   .deployments-section {
     padding: var(--spacing-xl) var(--spacing-md);
+    overflow-x: hidden;
+  }
+
+  .app-hero-card {
+    overflow: hidden;
   }
 
   .app-hero-text {
@@ -482,17 +487,35 @@
     font-size: 0.85rem;
   }
 
+  /* Let the device image show fully */
   .app-hero-device {
-    min-height: 250px;
-    max-height: 320px;
+    min-height: auto;
+    max-height: none;
+    padding: var(--spacing-lg) 0;
+  }
+
+  .floating-device {
+    width: 55%;
+    max-width: 220px;
+    margin-bottom: 0;
+  }
+
+  /* Web panel — stacked vertical tabs */
+  .web-systems-panel {
+    overflow: hidden;
   }
 
   .panel-sidebar {
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
     flex-direction: row;
     overflow-x: auto;
     gap: 4px;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .panel-sidebar::-webkit-scrollbar {
+    display: none;
   }
 
   .panel-sidebar-title {
@@ -500,10 +523,20 @@
   }
 
   .panel-tab {
-    padding: 0.6rem 0.8rem;
-    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.7rem;
     white-space: nowrap;
     flex-shrink: 0;
+    border-radius: 6px;
+  }
+
+  .panel-tab--active {
+    border-left: none;
+    border-bottom: 2px solid var(--tab-accent, var(--accent-cyan));
+  }
+
+  .panel-tab-arrow {
+    display: none;
   }
 
   .panel-main {
@@ -516,6 +549,10 @@
 
   .detail-desc {
     font-size: 0.85rem;
+  }
+
+  .detail-header {
+    flex-direction: column;
   }
 
   .browser-chrome {
@@ -531,5 +568,19 @@
   .visit-button {
     font-size: 0.65rem;
     padding: 0.5rem 1rem;
+  }
+
+  .detail-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stack-tags {
+    gap: 0.3rem;
+  }
+
+  .stack-tag {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.5rem;
   }
 }

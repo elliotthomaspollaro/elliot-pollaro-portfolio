@@ -165,9 +165,15 @@ section {
 /* ════════════════════════════════════════════
    GLOBAL MOBILE OVERRIDES
    ════════════════════════════════════════════ */
+/* Kill ALL horizontal scroll */
+.app-container {
+  overflow-x: hidden;
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--spacing-md);
+    overflow-x: hidden;
   }
 
   /* Floating badge — stack vertical on mobile */
