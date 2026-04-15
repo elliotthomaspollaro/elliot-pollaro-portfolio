@@ -112,7 +112,7 @@ const MassiveGallery = () => {
           <span className="mono accent-amber">// GENERATIVE ARCHIVE : {images.length} ASSETS</span>
           <h2 className="section-title">THE NEURAL DATABASE</h2>
           <p className="gallery-subtitle text-muted">
-            Prompt-engineered across Midjourney V5–V6. Click any generation for full resolution.
+            Prompt-engineered across Grok Imagine and Midjourney. Click any generation for full resolution.
           </p>
         </MDiv>
 
