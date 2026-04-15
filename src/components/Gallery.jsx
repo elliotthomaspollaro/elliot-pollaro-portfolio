@@ -5,7 +5,7 @@ import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import imagesData from '../data/images.json';
 import './Gallery.css';
 
-const IMAGES_PER_PAGE = 36;
+const IMAGES_PER_PAGE = 24;
 
 const GalleryImage = ({ item, index, onOpen }) => {
   const ref = useRef(null);
@@ -101,9 +101,6 @@ const MassiveGallery = () => {
 
   const goToPage = (newPage) => {
     setPage(newPage);
-    if (gridRef.current) {
-      gridRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
   };
 
   return (
