@@ -129,3 +129,41 @@
   gap: 0.5rem;
   pointer-events: none;
 }
+
+@media (max-width: 768px) {
+  .short-film-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .film-header .mono {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+  }
+
+  .massive-film-title {
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
+
+  .film-credit {
+    font-size: 0.7rem;
+  }
+
+  .laurel-role {
+    font-size: 0.9rem;
+  }
+
+  .laurel-festival {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+  }
+
+  .laurel-svg {
+    width: 30px;
+  }
+
+  .film-player-container .status-overlay {
+    top: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.6rem;
+  }
+}

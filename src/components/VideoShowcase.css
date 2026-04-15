@@ -138,3 +138,24 @@
   font-size: 0.65rem;
   color: var(--text-muted);
 }
+
+@media (max-width: 768px) {
+  .video-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .status-overlay {
+    top: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.6rem;
+    gap: 0.4rem;
+  }
+
+  .playlist-tracks {
+    max-height: 300px;
+  }
+
+  .playlist-item {
+    padding: 0.6rem var(--spacing-md);
+  }
+}

@@ -98,3 +98,31 @@
 a.hero-contact-item:hover {
   color: var(--accent-amber);
 }
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 0 var(--spacing-md);
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 12vw, 5rem);
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    padding: 0 var(--spacing-sm);
+  }
+
+  .hero-contact-strip {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-contact-item {
+    font-size: 0.65rem;
+  }
+
+  .scroll-indicator {
+    bottom: var(--spacing-lg);
+  }
+}

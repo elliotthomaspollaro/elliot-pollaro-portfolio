@@ -32,3 +32,22 @@
 .manifesto-focus-text p:last-child {
   color: var(--accent-amber);
 }
+
+@media (max-width: 768px) {
+  .manifesto-section {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .sticky-container {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .manifesto-focus-text p {
+    font-size: clamp(1.1rem, 5vw, 2rem);
+    margin-bottom: var(--spacing-lg);
+  }
+}

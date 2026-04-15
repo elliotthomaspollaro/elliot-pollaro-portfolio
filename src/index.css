@@ -23,6 +23,16 @@
   --spacing-giant: 16rem;
 }
 
+@media (max-width: 768px) {
+  :root {
+    --spacing-md: 0.75rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2.5rem;
+    --spacing-xxl: 4rem;
+    --spacing-giant: 8rem;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -150,4 +160,35 @@ section {
 
 .fc-email:hover {
   color: var(--accent-amber);
+}
+
+/* ════════════════════════════════════════════
+   GLOBAL MOBILE OVERRIDES
+   ════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  /* Floating badge — stack vertical on mobile */
+  .floating-contact {
+    top: 0.75rem;
+    right: 0.75rem;
+    flex-direction: column;
+    gap: 0;
+    padding: 0.5rem 0.85rem;
+    align-items: flex-end;
+  }
+
+  .fc-divider {
+    display: none;
+  }
+
+  .fc-name {
+    font-size: 0.6rem;
+  }
+
+  .fc-email {
+    font-size: 0.55rem;
+  }
 }

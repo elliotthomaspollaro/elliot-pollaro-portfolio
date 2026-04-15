@@ -170,3 +170,36 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@media (max-width: 768px) {
+  .audio-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .oscilloscope-container {
+    height: 280px;
+  }
+
+  .hud-overlay {
+    top: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.6rem;
+  }
+
+  .glass-control-deck {
+    padding: var(--spacing-lg) var(--spacing-md) var(--spacing-sm);
+  }
+
+  .master-play-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .track-pill {
+    padding: 0.35rem 0.6rem;
+  }
+
+  .pill-text {
+    font-size: 0.6rem;
+  }
+}

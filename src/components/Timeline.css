@@ -211,3 +211,44 @@
   color: var(--text-muted);
   line-height: 1.5;
 }
+
+@media (max-width: 768px) {
+  .timeline-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+
+  .timeline {
+    padding-left: 10px;
+  }
+
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timeline-item {
+    padding-left: 30px;
+  }
+
+  .timeline-node {
+    left: -11px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline-content {
+    padding: var(--spacing-md) 0;
+    top: -18px;
+  }
+
+  .role {
+    font-size: 1rem;
+  }
+
+  .points-list li {
+    font-size: 0.82rem;
+  }
+
+  .skills-block {
+    padding: var(--spacing-lg);
+  }
+}
