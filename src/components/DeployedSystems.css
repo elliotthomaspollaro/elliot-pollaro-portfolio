@@ -461,6 +461,11 @@
   color: var(--text-muted);
 }
 
+/* Mobile site navigator — hidden on desktop */
+.mobile-site-nav {
+  display: none;
+}
+
 @media (max-width: 768px) {
   .deployments-section {
     padding: var(--spacing-xl) var(--spacing-md);
@@ -582,5 +587,50 @@
   .stack-tag {
     font-size: 0.6rem;
     padding: 0.25rem 0.5rem;
+  }
+
+  /* Hide sidebar tabs on mobile — navigator replaces them */
+  .panel-sidebar {
+    display: none;
+  }
+
+  /* Show the mobile site navigator */
+  .mobile-site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: var(--spacing-md);
+  }
+
+  .site-nav-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .site-nav-btn:active {
+    background: rgba(255, 176, 0, 0.15);
+    border-color: var(--accent-amber);
+    color: var(--accent-amber);
+    transform: scale(0.95);
+  }
+
+  .site-nav-counter {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    min-width: 3rem;
+    text-align: center;
   }
 }

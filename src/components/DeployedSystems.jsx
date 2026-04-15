@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Smartphone, Globe, ChevronRight, Layers, Zap, Database, Code2 } from 'lucide-react';
+import { ExternalLink, Smartphone, Globe, ChevronRight, ChevronLeft, Layers, Zap, Database, Code2 } from 'lucide-react';
 import './DeployedSystems.css';
 
 const webSystems = [
@@ -179,6 +179,25 @@ const DeployedSystems = () => {
                 </div>
               </motion.div>
             </AnimatePresence>
+
+            {/* Mobile site navigator */}
+            <div className="mobile-site-nav">
+              <button 
+                className="site-nav-btn" 
+                onClick={() => setActiveIdx(i => i > 0 ? i - 1 : webSystems.length - 1)}
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <span className="site-nav-counter mono">
+                {activeIdx + 1} / {webSystems.length}
+              </span>
+              <button 
+                className="site-nav-btn"
+                onClick={() => setActiveIdx(i => i < webSystems.length - 1 ? i + 1 : 0)}
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
           </div>
         </motion.div>
 
