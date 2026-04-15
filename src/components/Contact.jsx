@@ -28,7 +28,7 @@ const Contact = () => {
             <a href="mailto:elliotthomaspollaro@gmail.com" className="contact-button mono glass-panel">
               <Mail size={20} className="icon" /> Email Me
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="contact-button mono glass-panel">
+            <a href="https://www.linkedin.com/in/elliotpollaro/" target="_blank" rel="noreferrer" className="contact-button mono glass-panel">
               <Link size={20} className="icon" /> LinkedIn
             </a>
           </div>
