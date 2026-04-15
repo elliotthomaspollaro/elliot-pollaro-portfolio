@@ -151,18 +151,18 @@
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: rgba(255, 176, 0, 0.9);
-  color: #000;
+  background: rgba(255, 255, 255, 0.85);
+  color: #1a1a1a;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 30px rgba(255, 176, 0, 0.3);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
 }
 
 .film-poster-wrap:hover .film-play-btn {
   transform: scale(1.1);
-  box-shadow: 0 0 50px rgba(255, 176, 0, 0.5);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.25);
 }
 
 .film-player-container .status-overlay {

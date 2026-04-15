@@ -67,9 +67,6 @@ const ShortFilmFeature = () => {
           className="film-player-container glass-panel"
           style={{ y: yParallax }}
         >
-          <div className="status-overlay mono">
-            <Film size={14} /> [SYS] MASTER_FILE // 21:00
-          </div>
           
           {playing ? (
             <iframe

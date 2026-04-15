@@ -41,9 +41,6 @@ const VideoShowcase = () => {
 
         <div className="video-layout">
           <div className="main-player-block glass-panel">
-            <div className="status-overlay mono">
-              <span className="rec-dot"></span> [SYS] RECORDING // {current.title}
-            </div>
             {current.youtube ? (
               <iframe
                 className="cinematic-video"
