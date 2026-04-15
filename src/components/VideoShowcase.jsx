@@ -5,10 +5,10 @@ import './VideoShowcase.css';
 
 const videos = [
   { youtube: "x1EBBVGsKqQ", title: "GROK_SUPERBOWL_CAMPAIGN", meta: "Super Bowl Commercial" },
-  { src: "/media/list-web.mp4", title: "LIST_ARCHITECTURE_RENDER", meta: "Web Optimized / Demo" },
-  { src: "/media/more-web.mp4", title: "MORE_AUTOMATION_RENDER", meta: "Web Optimized / Demo" },
-  { src: "/media/Super_funny_comedy_202508131804_8dnfg.mp4", title: "COMEDY_GENERATION_RENDER", meta: "Luma Runtime" },
-  { src: "/media/A_serene_asmr_202507151202_aw7yr.mp4", title: "ASMR_ENVIRONMENT_RENDER", meta: "Luma Runtime" }
+  { src: "/media/list-web.mp4", poster: "/media/poster-list.jpg", title: "LIST_ARCHITECTURE_RENDER", meta: "Web Optimized / Demo" },
+  { src: "/media/more-web.mp4", poster: "/media/poster-more.jpg", title: "MORE_AUTOMATION_RENDER", meta: "Web Optimized / Demo" },
+  { src: "/media/Super_funny_comedy_202508131804_8dnfg.mp4", poster: "/media/poster-comedy.jpg", title: "COMEDY_GENERATION_RENDER", meta: "Luma Runtime" },
+  { src: "/media/A_serene_asmr_202507151202_aw7yr.mp4", poster: "/media/poster-asmr.jpg", title: "ASMR_ENVIRONMENT_RENDER", meta: "Luma Runtime" }
 ];
 
 const VideoShowcase = () => {
@@ -36,10 +36,10 @@ const VideoShowcase = () => {
 
   const current = videos[currentIndex];
 
-  // Get poster image: YouTube thumbnail or black for local videos
+  // Get poster image: YouTube thumbnail or extracted frame for local videos
   const posterSrc = current.youtube 
     ? `https://img.youtube.com/vi/${current.youtube}/maxresdefault.jpg`
-    : null;
+    : current.poster || null;
 
   return (
     <section className="video-section cinematic-dark" id="showcase">
