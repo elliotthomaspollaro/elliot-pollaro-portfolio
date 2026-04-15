@@ -13,10 +13,12 @@ const videos = [
 
 const VideoShowcase = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [youtubeStarted, setYoutubeStarted] = useState(false);
   const videoRef = useRef(null);
 
   const selectVideo = (index) => {
     setCurrentIndex(index);
+    setYoutubeStarted(false);
     const vid = videos[index];
     if (!vid.youtube && videoRef.current) {
       videoRef.current.src = vid.src;
@@ -41,10 +43,23 @@ const VideoShowcase = () => {
 
         <div className="video-layout">
           <div className="main-player-block glass-panel">
-            {current.youtube ? (
+            {current.youtube && !youtubeStarted ? (
+              <div className="video-poster-wrap" onClick={() => setYoutubeStarted(true)}>
+                <img 
+                  src={`https://img.youtube.com/vi/${current.youtube}/maxresdefault.jpg`}
+                  alt={current.title}
+                  className="video-poster-img"
+                />
+                <div className="video-play-overlay">
+                  <div className="video-play-btn">
+                    <Play size={36} />
+                  </div>
+                </div>
+              </div>
+            ) : current.youtube && youtubeStarted ? (
               <iframe
                 className="cinematic-video"
-                src={`https://www.youtube.com/embed/${current.youtube}?rel=0&modestbranding=1`}
+                src={`https://www.youtube.com/embed/${current.youtube}?autoplay=1&rel=0&modestbranding=1`}
                 title={current.title}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -89,4 +104,3 @@ const VideoShowcase = () => {
 };
 
 export default VideoShowcase;
-
