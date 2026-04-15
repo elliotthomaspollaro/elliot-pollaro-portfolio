@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useScroll, useTransform } from 'framer-motion';
 import MDiv from './MDiv';
-import { Award, Film } from 'lucide-react';
+import { Award, Film, Play } from 'lucide-react';
 import './ShortFilmFeature.css';
 
 const awards = [
@@ -22,6 +22,7 @@ const awards = [
 const ShortFilmFeature = () => {
   const { scrollYProgress } = useScroll();
   const yParallax = useTransform(scrollYProgress, [0, 1], [0, -50]);
+  const [playing, setPlaying] = useState(false);
 
   return (
     <section className="short-film-section" id="film">
@@ -48,7 +49,6 @@ const ShortFilmFeature = () => {
               viewport={{ once: true }}
             >
               <div className="laurel-leaves">
-                {/* Minimalist SVG Laurel */}
                 <svg width="40" height="auto" viewBox="0 0 100 100" className="laurel-svg">
                   <path d="M50 10 C30 10 10 30 10 60 C10 80 20 95 30 100 C20 80 20 40 40 20" stroke="currentColor" fill="none" strokeWidth="2"/>
                   <path d="M50 10 C70 10 90 30 90 60 C90 80 80 95 70 100 C80 80 80 40 60 20" stroke="currentColor" fill="none" strokeWidth="2"/>
@@ -71,13 +71,29 @@ const ShortFilmFeature = () => {
             <Film size={14} /> [SYS] MASTER_FILE // 21:00
           </div>
           
-          <video 
-            src="/media/sleep-web.mp4" 
-            controls 
-            preload="metadata"
-            className="film-video"
-            poster="/media/sleep-poster.jpg"
-          ></video>
+          {playing ? (
+            <iframe
+              className="film-video"
+              src="https://www.youtube.com/embed/fdfs_x4ArLM?autoplay=1&rel=0&modestbranding=1"
+              title="Sleep Now In The Fire"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          ) : (
+            <div className="film-poster-wrap" onClick={() => setPlaying(true)}>
+              <img 
+                src="/media/sleep-poster.jpg" 
+                alt="Sleep Now In The Fire" 
+                className="film-poster-img"
+              />
+              <div className="film-play-overlay">
+                <div className="film-play-btn">
+                  <Play size={36} />
+                </div>
+              </div>
+            </div>
+          )}
         </MDiv>
       </div>
     </section>

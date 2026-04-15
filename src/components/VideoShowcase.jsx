@@ -4,7 +4,7 @@ import { Play } from 'lucide-react';
 import './VideoShowcase.css';
 
 const videos = [
-  { src: "/media/GrokSpotFinal.mov", title: "GROK_SUPERBOWL_CAMPAIGN", meta: "High Resolution / 24fps" },
+  { youtube: "x1EBBVGsKqQ", title: "GROK_SUPERBOWL_CAMPAIGN", meta: "Super Bowl Commercial" },
   { src: "/media/list-web.mp4", title: "LIST_ARCHITECTURE_RENDER", meta: "Web Optimized / Demo" },
   { src: "/media/more-web.mp4", title: "MORE_AUTOMATION_RENDER", meta: "Web Optimized / Demo" },
   { src: "/media/Super_funny_comedy_202508131804_8dnfg.mp4", title: "COMEDY_GENERATION_RENDER", meta: "Luma Runtime" },
@@ -17,11 +17,14 @@ const VideoShowcase = () => {
 
   const selectVideo = (index) => {
     setCurrentIndex(index);
-    if (videoRef.current) {
-      videoRef.current.src = videos[index].src;
+    const vid = videos[index];
+    if (!vid.youtube && videoRef.current) {
+      videoRef.current.src = vid.src;
       videoRef.current.play();
     }
   };
+
+  const current = videos[currentIndex];
 
   return (
     <section className="video-section cinematic-dark" id="showcase">
@@ -39,16 +42,27 @@ const VideoShowcase = () => {
         <div className="video-layout">
           <div className="main-player-block glass-panel">
             <div className="status-overlay mono">
-              <span className="rec-dot"></span> [SYS] RECORDING // {videos[currentIndex].title}
+              <span className="rec-dot"></span> [SYS] RECORDING // {current.title}
             </div>
-            <video 
-              ref={videoRef}
-              src={videos[currentIndex].src} 
-              controls 
-              preload="metadata"
-              className="cinematic-video"
-              autoPlay={false}
-            ></video>
+            {current.youtube ? (
+              <iframe
+                className="cinematic-video"
+                src={`https://www.youtube.com/embed/${current.youtube}?rel=0&modestbranding=1`}
+                title={current.title}
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ) : (
+              <video 
+                ref={videoRef}
+                src={current.src} 
+                controls 
+                preload="metadata"
+                className="cinematic-video"
+                autoPlay={false}
+              ></video>
+            )}
           </div>
 
           <div className="video-playlist">
@@ -78,3 +92,4 @@ const VideoShowcase = () => {
 };
 
 export default VideoShowcase;
+
