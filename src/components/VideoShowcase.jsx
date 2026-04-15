@@ -13,20 +13,33 @@ const videos = [
 
 const VideoShowcase = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [youtubeStarted, setYoutubeStarted] = useState(false);
+  const [playing, setPlaying] = useState(false);
   const videoRef = useRef(null);
 
   const selectVideo = (index) => {
     setCurrentIndex(index);
-    setYoutubeStarted(false);
-    const vid = videos[index];
-    if (!vid.youtube && videoRef.current) {
-      videoRef.current.src = vid.src;
-      videoRef.current.play();
+    setPlaying(false);
+  };
+
+  const startPlaying = () => {
+    setPlaying(true);
+    // For native videos, autoplay after state update
+    const vid = videos[currentIndex];
+    if (!vid.youtube) {
+      setTimeout(() => {
+        if (videoRef.current) {
+          videoRef.current.play();
+        }
+      }, 50);
     }
   };
 
   const current = videos[currentIndex];
+
+  // Get poster image: YouTube thumbnail or black for local videos
+  const posterSrc = current.youtube 
+    ? `https://img.youtube.com/vi/${current.youtube}/maxresdefault.jpg`
+    : null;
 
   return (
     <section className="video-section cinematic-dark" id="showcase">
@@ -43,23 +56,29 @@ const VideoShowcase = () => {
 
         <div className="video-layout">
           <div className="main-player-block glass-panel">
-            {current.youtube && !youtubeStarted ? (
-              <div className="video-poster-wrap" onClick={() => setYoutubeStarted(true)}>
-                <img 
-                  src={`https://img.youtube.com/vi/${current.youtube}/maxresdefault.jpg`}
-                  alt={current.title}
-                  className="video-poster-img"
-                />
+            {!playing ? (
+              /* Poster with gray play button — same for all videos */
+              <div className="video-poster-wrap" onClick={startPlaying}>
+                {posterSrc ? (
+                  <img 
+                    src={posterSrc}
+                    alt={current.title}
+                    className="video-poster-img"
+                  />
+                ) : (
+                  <div className="video-poster-dark"></div>
+                )}
                 <div className="video-play-overlay">
                   <div className="video-play-btn">
                     <Play size={36} />
                   </div>
+                  <span className="video-poster-label mono">{current.title}</span>
                 </div>
               </div>
-            ) : current.youtube && youtubeStarted ? (
+            ) : current.youtube ? (
               <iframe
                 className="cinematic-video"
-                src={`https://www.youtube.com/embed/${current.youtube}?autoplay=1&rel=0&modestbranding=1`}
+                src={`https://www.youtube.com/embed/${current.youtube}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
                 title={current.title}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -72,7 +91,8 @@ const VideoShowcase = () => {
                 controls 
                 preload="metadata"
                 className="cinematic-video"
-                autoPlay={false}
+                autoPlay
+                playsInline
               ></video>
             )}
           </div>
