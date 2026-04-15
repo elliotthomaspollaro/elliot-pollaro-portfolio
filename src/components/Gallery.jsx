@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import MDiv from './MDiv';
 import { AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 import imagesData from '../data/images.json';
 import './Gallery.css';
+
+const IMAGES_PER_PAGE = 36;
 
 const GalleryImage = ({ item, index, onOpen }) => {
   const ref = useRef(null);
@@ -18,7 +20,6 @@ const GalleryImage = ({ item, index, onOpen }) => {
     return () => observer.disconnect();
   }, []);
 
-  // Assign span class based on aspect ratio for variety
   let spanClass = '';
   if (item.ratio > 1.6) spanClass = 'span-wide';
   else if (item.ratio > 1.3) spanClass = 'span-landscape';
@@ -57,14 +58,10 @@ const Lightbox = ({ item, onClose }) => {
       exit={{ opacity: 0 }}
       onClick={onClose}
     >
-      <motion.img
+      <img
         src={item.src}
         alt="Full resolution"
         className="lightbox-img"
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.8, opacity: 0 }}
-        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
         onClick={(e) => e.stopPropagation()}
       />
       <button className="lightbox-close" onClick={onClose}>
@@ -76,19 +73,18 @@ const Lightbox = ({ item, onClose }) => {
 
 const MassiveGallery = () => {
   const [images, setImages] = useState([]);
+  const [page, setPage] = useState(0);
   const [lightboxItem, setLightboxItem] = useState(null);
+  const gridRef = useRef(null);
 
   useEffect(() => {
-    // Strategic shuffle: put wide images first for visual impact, then mix the rest
     const wide = imagesData.filter(i => i.ratio > 1.3);
     const rest = imagesData.filter(i => i.ratio <= 1.3);
     
-    // Shuffle each group
     const shuffleArr = (arr) => [...arr].sort(() => 0.5 - Math.random());
     const shuffledWide = shuffleArr(wide);
     const shuffledRest = shuffleArr(rest);
     
-    // Interleave: every 2nd image is wide for visual rhythm
     const interleaved = [];
     let wi = 0, ri = 0;
     while (wi < shuffledWide.length || ri < shuffledRest.length) {
@@ -99,6 +95,16 @@ const MassiveGallery = () => {
     
     setImages(interleaved);
   }, []);
+
+  const totalPages = Math.ceil(images.length / IMAGES_PER_PAGE);
+  const pageImages = images.slice(page * IMAGES_PER_PAGE, (page + 1) * IMAGES_PER_PAGE);
+
+  const goToPage = (newPage) => {
+    setPage(newPage);
+    if (gridRef.current) {
+      gridRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
 
   return (
     <section className="massive-gallery-section" id="gallery">
@@ -116,15 +122,65 @@ const MassiveGallery = () => {
           </p>
         </MDiv>
 
+        {/* Page navigation top */}
+        <div className="gallery-nav" ref={gridRef}>
+          <button 
+            className="gallery-nav-btn" 
+            onClick={() => goToPage(page - 1)}
+            disabled={page === 0}
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <div className="gallery-nav-info mono">
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i}
+                className={`gallery-dot ${i === page ? 'active' : ''}`}
+                onClick={() => goToPage(i)}
+              >
+                {i + 1}
+              </button>
+            ))}
+          </div>
+          <button 
+            className="gallery-nav-btn" 
+            onClick={() => goToPage(page + 1)}
+            disabled={page >= totalPages - 1}
+          >
+            <ChevronRight size={20} />
+          </button>
+        </div>
+
         <div className="cinema-grid">
-          {images.map((img, index) => (
+          {pageImages.map((img, index) => (
             <GalleryImage
-              key={index}
+              key={`${page}-${index}`}
               item={img}
-              index={index}
+              index={page * IMAGES_PER_PAGE + index}
               onOpen={setLightboxItem}
             />
           ))}
+        </div>
+
+        {/* Page navigation bottom */}
+        <div className="gallery-nav gallery-nav--bottom">
+          <button 
+            className="gallery-nav-btn" 
+            onClick={() => goToPage(page - 1)}
+            disabled={page === 0}
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <span className="gallery-page-label mono">
+            Page {page + 1} of {totalPages}
+          </span>
+          <button 
+            className="gallery-nav-btn" 
+            onClick={() => goToPage(page + 1)}
+            disabled={page >= totalPages - 1}
+          >
+            <ChevronRight size={20} />
+          </button>
         </div>
       </div>
 
