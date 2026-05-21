@@ -29,16 +29,25 @@ const Manifesto = () => {
             ))}
           </div>
 
+          {/* Portrait + Executive Summary */}
           <MDiv
-            className="manifesto-summary"
-            initial={{ opacity: 0, y: 20 }}
+            className="manifesto-bio"
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p>
-              Versatile leader with 18+ years of experience building digital products, scaling audiences, and integrating AI into organizational workflows. Uniquely bridges the gap between executive strategy (managing up to $15M/year budgets) and hands-on technical execution. Creator of Dynasty Dealer—a full-stack fantasy sports platform live on iOS, Android, and web—built using AI-assisted development and scaled to 9,400+ users and 358,000+ interactions in 90 days with zero ad spend.
-            </p>
+            <div className="bio-portrait">
+              <img src="/media/elliotpimage.png" alt="Elliot Pollaro" />
+            </div>
+            <div className="bio-text">
+              <p>
+                Versatile leader with 18+ years of experience building digital products, scaling audiences, and integrating AI into organizational workflows. Uniquely bridges the gap between executive strategy (managing up to $15M/year budgets) and hands-on technical execution.
+              </p>
+              <p>
+                Creator of Dynasty Dealer—a full-stack fantasy sports platform live on iOS, Android, and web—built using AI-assisted development and scaled to 9,400+ users and 358,000+ interactions in 90 days with zero ad spend.
+              </p>
+            </div>
           </MDiv>
 
           <MDiv
