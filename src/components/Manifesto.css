@@ -1,17 +1,15 @@
 .manifesto-section {
   position: relative;
-  height: 120vh;
   background-color: var(--bg-color);
+  /* Remove fixed height — let content dictate size */
 }
 
 .sticky-container {
-  position: sticky;
-  top: 0;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-xl);
+  min-height: 80vh;
+  padding: var(--spacing-xxl) var(--spacing-xl);
 }
 
 .manifesto-content {
@@ -59,15 +57,8 @@
 }
 
 @media (max-width: 768px) {
-  .manifesto-section {
-    height: auto;
-    min-height: 100vh;
-  }
-
   .sticky-container {
-    position: relative;
-    height: auto;
-    min-height: 100vh;
+    min-height: auto;
     padding: var(--spacing-xl) var(--spacing-md);
   }
 

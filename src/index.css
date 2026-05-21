@@ -110,6 +110,8 @@ a:hover {
 /* Base cinematic section */
 section {
   position: relative;
+  z-index: 1;
+  isolation: isolate;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 

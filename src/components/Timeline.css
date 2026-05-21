@@ -75,7 +75,7 @@
 .timeline-node {
   position: absolute;
   left: -6px;
-  top: 0;
+  top: 1.2rem;
   width: 14px;
   height: 14px;
   background: var(--bg-color);
@@ -87,8 +87,6 @@
 
 .timeline-content {
   padding: var(--spacing-lg);
-  position: relative;
-  top: -24px;
 }
 
 .timeline-header {
@@ -294,7 +292,6 @@
 
   .timeline-content {
     padding: var(--spacing-md) 0;
-    top: -18px;
   }
 
   .role {

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { useScroll, useSpring } from 'framer-motion';
 import Hero from './components/Hero';
 import Manifesto from './components/Manifesto';
 import ShortFilmFeature from './components/ShortFilmFeature';
@@ -10,6 +10,7 @@ import VideoShowcase from './components/VideoShowcase';
 import GenerativeAudio from './components/GenerativeAudio';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
+import MDiv from './components/MDiv';
 import './index.css';
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
   return (
     <div className="app-container">
       {/* Global Scroll Progress Bar */}
-      <motion.div
+      <MDiv
         className="progress-bar"
         style={{ scaleX }}
       />
