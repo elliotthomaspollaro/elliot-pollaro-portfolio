@@ -46,8 +46,8 @@
 
 .bio-portrait {
   flex-shrink: 0;
-  width: 220px;
-  height: 300px;
+  width: 300px;
+  height: 400px;
   overflow: hidden;
   border-radius: 8px;
   position: relative;
@@ -131,8 +131,8 @@
   }
 
   .bio-portrait {
-    width: 180px;
-    height: 240px;
+    width: 240px;
+    height: 320px;
     margin: 0 auto;
   }
 
