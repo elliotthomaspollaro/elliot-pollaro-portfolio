@@ -28,6 +28,17 @@ const Manifesto = () => {
               </MDiv>
             ))}
           </div>
+
+          <MDiv
+            className="manifesto-coda"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 1.2, delay: 0.3 }}
+          >
+            <p>Douglas Adams wrote that the hardest problem isn't finding the answer—it's formulating the right question. To ask the right questions, humanity must expand both biological and digital consciousness.</p>
+            <p className="manifesto-coda-final">We need a much bigger computer. I want to help build it.</p>
+          </MDiv>
         </div>
       </div>
     </section>

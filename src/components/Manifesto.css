@@ -33,6 +33,31 @@
   color: var(--accent-amber);
 }
 
+/* Adams quote coda */
+.manifesto-coda {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.manifesto-coda p {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-style: italic;
+  letter-spacing: 0.01em;
+}
+
+.manifesto-coda-final {
+  margin-top: var(--spacing-md);
+  font-style: italic;
+  color: var(--accent-amber) !important;
+  font-weight: 500;
+}
+
 @media (max-width: 768px) {
   .manifesto-section {
     height: auto;
@@ -49,5 +74,14 @@
   .manifesto-focus-text p {
     font-size: clamp(1.1rem, 5vw, 2rem);
     margin-bottom: var(--spacing-lg);
+  }
+
+  .manifesto-coda {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+  }
+
+  .manifesto-coda p {
+    font-size: 0.85rem;
   }
 }

@@ -41,7 +41,7 @@ const Hero = () => {
           transition={{ duration: 2, delay: 1.2 }}
           className="hero-subtitle text-muted"
         >
-          <p>Intelligence integration. Scalable systems. First-principles engineering.</p>
+          <p>Product Builder · AI Strategist · Growth Marketing Leader</p>
         </MDiv>
 
         <MDiv
