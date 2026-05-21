@@ -51,6 +51,31 @@ const Arsenal = () => {
           <h2 className="section-title">THE ARSENAL</h2>
         </MDiv>
 
+        {/* ── CORE STRENGTHS ── */}
+        <MDiv
+          className="core-strengths"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+        >
+          {[
+            "AI-Assisted Product Development",
+            "Growth Marketing Strategy",
+            "Full-Funnel Analytics",
+            "Paid Media Optimization",
+            "CRM & Lifecycle Automation",
+            "Technical Project Leadership",
+            "Brand Building",
+            "Creative Strategy",
+            "Cross-Functional Team Training",
+            "Product Launches",
+            "Customer Acquisition",
+            "Data-Driven Decision Making"
+          ].map((strength, i) => (
+            <span key={i} className="strength-pill mono">{strength}</span>
+          ))}
+        </MDiv>
+
         {/* ── AI TOOLS GRID ── */}
         <MDiv
           className="arsenal-block"

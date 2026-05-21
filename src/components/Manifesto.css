@@ -32,6 +32,23 @@
 }
 
 /* Adams quote coda */
+.manifesto-summary {
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-xl);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.manifesto-summary p {
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  color: var(--text-muted);
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
 .manifesto-coda {
   margin-top: var(--spacing-xl);
   padding-top: var(--spacing-xl);

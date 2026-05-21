@@ -1,7 +1,7 @@
 import React from 'react';
 import { useScroll, useTransform } from 'framer-motion';
 import MDiv from './MDiv';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone, ExternalLink } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
@@ -55,6 +55,9 @@ const Hero = () => {
           </a>
           <a href="tel:9036243014" className="hero-contact-item">
             <Phone size={14} /> (903) 624-3014
+          </a>
+          <a href="https://www.linkedin.com/in/elliotpollaro/" target="_blank" rel="noreferrer" className="hero-contact-item">
+            <ExternalLink size={14} /> LinkedIn
           </a>
           <span className="hero-contact-item">
             <MapPin size={14} /> Dallas, TX

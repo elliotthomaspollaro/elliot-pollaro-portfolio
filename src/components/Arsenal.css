@@ -22,6 +22,36 @@
   line-height: 1;
 }
 
+/* ── Core Strengths Pills ── */
+.core-strengths {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  max-width: 1000px;
+  margin: 0 auto var(--spacing-xxl);
+  padding: 0 var(--spacing-lg);
+}
+
+.strength-pill {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  padding: 0.45rem 1rem;
+  border-radius: 100px;
+  border: 1px solid rgba(255, 176, 0, 0.2);
+  color: var(--text-muted);
+  background: rgba(255, 176, 0, 0.04);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.strength-pill:hover {
+  border-color: rgba(255, 176, 0, 0.5);
+  color: var(--accent-amber);
+  background: rgba(255, 176, 0, 0.08);
+}
+
 /* ── Block Title ── */
 .arsenal-block {
   max-width: 1200px;
