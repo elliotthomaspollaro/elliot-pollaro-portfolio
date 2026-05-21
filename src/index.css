@@ -115,6 +115,41 @@ section {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Creative section divider */
+.creative-divider {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.creative-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 176, 0, 0.2), transparent);
+}
+
+.creative-divider-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: var(--text-muted);
+  white-space: nowrap;
+  opacity: 0.5;
+}
+
+@media (max-width: 768px) {
+  .creative-divider {
+    padding: var(--spacing-lg) var(--spacing-md);
+    gap: var(--spacing-md);
+  }
+
+  .creative-divider-label {
+    font-size: 0.55rem;
+  }
+}
+
 /* Floating Contact Badge */
 .floating-contact {
   position: fixed;

@@ -30,15 +30,27 @@ function App() {
       />
       
       <main>
+        {/* ── IDENTITY ── */}
         <Hero />
         <Manifesto />
-        <VideoShowcase />
-        <ShortFilmFeature />
-        <Timeline />
+
+        {/* ── STRATEGY & PROOF ── */}
         <Arsenal />
         <DeployedSystems />
+        <Timeline />
+
+        {/* ── CREATIVE PORTFOLIO ── */}
+        <div className="creative-divider">
+          <span className="creative-divider-line"></span>
+          <span className="creative-divider-label mono">CREATIVE & GENERATIVE WORK</span>
+          <span className="creative-divider-line"></span>
+        </div>
+        <VideoShowcase />
+        <ShortFilmFeature />
         <GenerativeAudio />
         <Gallery />
+
+        {/* ── CONTACT ── */}
         <Contact />
       </main>
 
